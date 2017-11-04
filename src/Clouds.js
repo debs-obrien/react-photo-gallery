@@ -5,6 +5,7 @@ import PhotoContainer from "./PhotoContainer";
 
 const Clouds = (props) => {
 
+
     return(
         <div className="container">
             <Container />
