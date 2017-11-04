@@ -47,9 +47,9 @@ class App extends Component {
               <Switch>
                   <Route exact path="/" render ={ () => <Search title="Home" onSearch={this.performSearch} data={this.state.photos} />}  />
                   <Route path="/search" render ={ () => <Search title="Search" onSearch={this.performSearch} data={this.state.photos} />}  />
-                  <Route path="/clouds" render ={ () => <Clouds title="Clouds" onSearch={this.performSearch} data={this.state.photos} />} />
-                  <Route path="/sunset" render ={ () => <Sunset title="Sunset" data={this.state.photos} query='Sunset' />} />
-                  <Route path="/flowers" render ={ () => <Flowers title="flowers" data={this.state.photos} />} />
+                  <Route path="/clouds" render ={ () => <Clouds title="Clouds" onSearch={this.performSearch} data={this.state.photos}/>} />
+                  <Route path="/sunset" render ={ () => <Sunset title="Sunset" onSearch={this.performSearch} data={this.state.photos} />} />
+                  <Route path="/flowers" render ={ () => <Flowers title="flowers" onSearch={this.performSearch} data={this.state.photos} />} />
                   <Route component={NotFound}/>
               </Switch>
           </div>

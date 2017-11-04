@@ -4,7 +4,9 @@ import './App.css';
 import PhotoContainer from "./PhotoContainer";
 
 const Clouds = (props) => {
-
+    this.state = {
+        query: 'Clouds'
+    };
 
     return(
         <div className="container">
