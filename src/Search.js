@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import apiKey from './config';
 import './App.css';
-
-const flickerKey = apiKey;
+import Navigation from './Navigation';
 
 class Search extends Component {
     render() {
@@ -17,6 +15,7 @@ class Search extends Component {
                         </svg>
                     </button>
                 </form>
+                <Navigation/>
             </div>
         );
     }
