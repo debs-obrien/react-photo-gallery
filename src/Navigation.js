@@ -5,7 +5,7 @@ class Navigation extends Component {
     render() {
         return (
             <div>
-                <h1>Container</h1>
+                <h1>Nav</h1>
             </div>
         );
     }
