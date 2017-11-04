@@ -1,14 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
-class Clouds extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Clouds</h1>
-            </div>
-        );
-    }
-}
+const Clouds = (props) => (
+
+    <div className="photo-container">
+        <h2>Results for {props.title}</h2>
+        <ul>
+            <li>
+                <img src="" alt="" />
+            </li>
+            <li>
+                <img src="" alt="" />
+            </li>
+            <li>
+                <img src="" alt="" />
+            </li>
+            <li>
+                <img src="" alt="" />
+            </li>
+
+            <li className="not-found">
+                <h3>No Results Found</h3>
+                <p>You search did not return any results. Please try again.</p>
+            </li>
+        </ul>
+    </div>
+
+);
+
 
 export default Clouds;
