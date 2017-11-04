@@ -14,19 +14,21 @@ const PhotoContainer = (props) => {
                 key={photo.id}
             />
         );
+        return(
+            <div className="photo-container">
+                <ul>
+                    {photos}
+                </ul>
+            </div>
+        );
     }else{
-        photos = <NoPhotos/>
+        return(
+            <div>
+                <NoPhotos/>
+            </div>
+        );
     }
 
-
-
-    return(
-        <div className="photo-container">
-            <ul>
-                {photos}
-            </ul>
-        </div>
-    );
 };
 
 

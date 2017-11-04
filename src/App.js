@@ -16,7 +16,7 @@ class App extends Component {
         this.state = {
             photos: [],
             loading: true,
-            query: 'people'
+            query: 'love'
         };
     }
     componentDidMount(){
