@@ -14,12 +14,15 @@ class App extends Component {
     constructor(){
         super();
         this.state = {
-            photos: []
+            photos: [],
+            search: this.search
         };
     }
     componentDidMount(){
         const flickerKey = apiKey;
-        const url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=530bf8156cfb70d0a7f891e9e74ee790&tags=sunset&per_page=8&page=1&format=json&nojsoncallback=1';
+        const search = this.state.search;
+        let perPage = 16;
+        const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${flickerKey}&tags=${search}&per_page=${perPage}&page=1&format=json&nojsoncallback=1`;
         axios.get(url)
             .then(response => {
                 this.setState({
@@ -33,17 +36,18 @@ class App extends Component {
 
 
 
+
   render() {
       console.log(this.state.photos);
     return (
       <BrowserRouter>
           <div className="App">
               <Switch>
-                  <Route exact path="/" component={Search} />
-                  <Route path="/search" component={Search} />
-                  <Route path="/clouds" render ={ () => <Clouds title="Clouds" data={this.state.photos} />} />
-                  <Route path="/sunset" render ={ () => <Sunset title="Sunset" />} />
-                  <Route path="/flowers" render ={ () => <Flowers title="flowers" />} />
+                  <Route exact path="/" render ={ () => <Clouds title="Clouds" search={this.state.search} data={this.state.photos} />}  />
+                  <Route path="/search" render ={ () => <Search title="Search" search={this.state.search} data={this.state.photos} />}  />
+                  <Route path="/clouds" render ={ () => <Clouds title="Clouds" search={this.state.search} data={this.state.photos} />} />
+                  <Route path="/sunset" render ={ () => <Sunset title="Sunset" data={this.state.photos} />} />
+                  <Route path="/flowers" render ={ () => <Flowers title="flowers" data={this.state.photos} />} />
                   <Route component={NotFound}/>
               </Switch>
           </div>
